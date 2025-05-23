@@ -1,0 +1,55 @@
+{
+  "name": "Discord Bot - Moderation & Music",
+  "description": "A powerful Discord bot with advanced moderation and multi-platform music features",
+  "keywords": ["discord", "bot", "moderation", "music", "nodejs"],
+  "website": "https://github.com/yourusername/discord-bot",
+  "repository": "https://github.com/yourusername/discord-bot",
+  "logo": "https://cdn.discordapp.com/app-icons/123456789/icon.png",
+  "success_url": "/",
+  "env": {
+    "DISCORD_TOKEN": {
+      "description": "Your Discord bot token from Discord Developer Portal",
+      "required": true
+    },
+    "CLIENT_ID": {
+      "description": "Your Discord bot client ID from Discord Developer Portal",
+      "required": true
+    },
+    "SPOTIFY_CLIENT_ID": {
+      "description": "Spotify API client ID for music features",
+      "required": false
+    },
+    "SPOTIFY_CLIENT_SECRET": {
+      "description": "Spotify API client secret for music features",
+      "required": false
+    },
+    "OWNER_ID": {
+      "description": "Your Discord user ID for owner commands",
+      "required": true
+    },
+    "PREFIX": {
+      "description": "Bot command prefix (default: !)",
+      "value": "!",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "addons": [],
+  "scripts": {
+    "postdeploy": "echo 'Discord bot deployed successfully! Configure your environment variables and scale the worker dyno.'"
+  }
+}
